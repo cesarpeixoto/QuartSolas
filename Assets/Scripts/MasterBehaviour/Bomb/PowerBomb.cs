@@ -5,7 +5,7 @@ Curso: Tecnologia em Jogos Digitais - 2o Semestre - 2016
 Professor: Enric Llagostera
 //---------------------------------------------------------------------------------------------------------------
 
-Classe reponsável pela invocação do poder de criar bombas no mapa.
+Classe reponsável pela invocação do poder de criar bombas instantâneas no mapa.
 
 
 
@@ -29,6 +29,7 @@ public class PowerBomb : MasterBehaviour
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MasterBehaviour
 
+	/*
 	// Use this for initialization
 	protected override void Awake () 
 	{
@@ -43,6 +44,7 @@ public class PowerBomb : MasterBehaviour
 		base.Update ();
 	} 
 
+	*/
 	//---------------------------------------------------------------------------------------------------------------
 
 	public override void Behaviour ()
@@ -55,7 +57,8 @@ public class PowerBomb : MasterBehaviour
 		if (!hit) // é estranho, mas com raycast null = true
 		{ 
 			GameObject.Instantiate (spawnavel, position, Quaternion.identity);
-			mouseManager.masterPower = null;										// Desativa a habilidade no MouseManager
+			MouseManager.masterPower = null;										// Desativa a habilidade no MouseManager
+			//PowersManager.UpdateResource(PowersManager.ConstPowerList.Bomb);
 		}
 	}
 

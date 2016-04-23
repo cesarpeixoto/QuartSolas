@@ -9,6 +9,9 @@ Classe do tipo action, que administra o comportamento da direção em que o Spri
 Primeira revisão de código: (em 07/04/2016)
 Adicionado código para manter a escala quando o comportamento é acionado.
 
+Segunda revisão de código: (em 22/04/2016)
+Movimentos são tratados agora em FixedUpdate.
+
 //---------------------------------------------------------------------------------------------------------------
 
 $Creator: Cesar Peixoto $
@@ -23,12 +26,19 @@ public class FaceDirection : ActionBehavior
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MonoBehaviour
 
-	// Update is called once per frame
-	void Update () 
+	private void FixedUpdate () 
 	{
 		bool right = _inputState.getControlValue (inputControls [0]);				// recebe o estado do controle setado na primeira posição no inpector
 		bool left  = _inputState.getControlValue (inputControls [1]);				// recebe o estado do controle setado na segunda posição no inpector
 
+		OnFacing (left, right);
+	}
+
+	//---------------------------------------------------------------------------------------------------------------
+	// Método que altera a direção apontada.
+
+	private void OnFacing(bool left, bool right)
+	{
 		if (right) 																	// Se o controle for para direita, aponta o estado do objeto para direita		 														
 			_inputState.direction = Directions.Right; 		
 		else if(left)																// Se o controle for para esquerda, aponta o estado do objeto para esquerda

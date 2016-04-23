@@ -23,10 +23,9 @@ public abstract class ActionBehavior : MonoBehaviour
 	// Propriedades da Classe
 	public Controls[] inputControls;
 
-
 	protected InputState _inputState;								// Referência para um componente InputState
 	protected Rigidbody2D _thisBody2D;								// Referência para um componente RigidBody2D
-	protected CollisionStateManager _collisionState;						// Referência para um componente CollisionState
+	protected CollisionStateManager _collisionState;				// Referência para um componente CollisionState
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MonoBehaviour
@@ -35,7 +34,7 @@ public abstract class ActionBehavior : MonoBehaviour
 	{
 		_inputState     = GetComponent<InputState> ();				// Inicializa a referência
 		_thisBody2D     = GetComponent<Rigidbody2D> ();				// Inicializa a referência
-		_collisionState = GetComponent<CollisionStateManager> ();			// Inicializa a referência
+		_collisionState = GetComponent<CollisionStateManager> ();	// Inicializa a referência
 	}
 		
 	//---------------------------------------------------------------------------------------------------------------

@@ -12,6 +12,9 @@ OBS1: Em testes, descobri que o valor recebido por Input.GetAxis recebe desacele
 multiplicado pela direção do InputState, mantem a integradade de direções da classe abstrata (poder confusão do Mestre), 
 com o comportamento de desaceleração desejado para o comportamento de caminhar. 
 
+Segunda revisão de código: (em 22/04/2016)
+Movimentos são tratados agora em FixedUpdate.
+
 //---------------------------------------------------------------------------------------------------------------
 
 $Creator: Cesar Peixoto $
@@ -29,23 +32,30 @@ public class Walk : ActionBehavior
 	public float speed = 7.00f;													// Velocidade do corpo ao caminhar
 
 	//---------------------------------------------------------------------------------------------------------------
-	// Metodos herdados de MonoBehaviour
+	// Métodos herdados de MonoBehaviour
 	
 	// Update is called once per frame
-	void Update () 
+	private void FixedUpdate () 
 	{
 		bool right = _inputState.getControlValue (inputControls [0]);					// Recebe o estado do controle setado na primeira posição no inpector
 		bool left  = _inputState.getControlValue (inputControls [1]);					// Recebe o estado do controle setado na segunda posição no inpector
+		OnWalk(left, right);
+	}
 
+	//---------------------------------------------------------------------------------------------------------------
+	// Método que caminha na direção apontada.
+
+	private void OnWalk(bool left, bool right)
+	{
 		bool lateralCollided = (_collisionState.leftCollided || _collisionState.rightCollided);
 
 		if ((right || left) && !(lateralCollided && !_collisionState.isGrounded))
 		{
 			float velocityX = speed * Mathf.Abs (Input.GetAxis ("Horizontal")) * 			// Calcula a velocidade no eixo X (OBS1)
-												 (int)_inputState.direction;	
+				(int)_inputState.direction;	
 
 			if(!((velocityX > 0) && _collisionState.rightCollided) && !((velocityX < 0) 	// Checa se não quer andar na direção da colisão
-													  && _collisionState.leftCollided)) 
+				&& _collisionState.leftCollided)) 
 				_thisBody2D.velocity = new Vector2 (velocityX, _thisBody2D.velocity.y);		// Implementa o movimento de acordo com a velocidade
 		}			
 	}

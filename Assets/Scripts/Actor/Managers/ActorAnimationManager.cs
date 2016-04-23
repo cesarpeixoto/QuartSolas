@@ -46,17 +46,18 @@ public class ActorAnimationManager : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if ( _collisionState.isGrounded && _actorState.absolutVelocityX == 0 		// Animação é Idle só acionada se estiver no chão, e a velocidade absoluta em X for zero
-												&& !ActorStateManager.isDead)
-			changeAnimationState (AnimationState.Idle);
-		
-		if (_actorState.absolutVelocityX > 0 && !ActorStateManager.isDead)			// Se a velocidade absoluta em X é maior que zero, o estado da animação é Walk
-			changeAnimationState (AnimationState.Walk);
+		if(!ActorStateManager.isDead)
+		{
+			if ( _collisionState.isGrounded && _actorState.absolutVelocityX == 0) 		// Animação é Idle só acionada se estiver no chão, e a velocidade absoluta em X for zero
+				changeAnimationState (AnimationState.Idle);
 
-		if (_actorState.absolutVelocityY > 0 && !ActorStateManager.isDead)			// Se a velocidade absoluta em Y é maior que zero, o estado da animação é Jump
-			changeAnimationState (AnimationState.Jump);
+			else if (_actorState.absolutVelocityX > 0 && _collisionState.isGrounded)	// Se a velocidade absoluta em X é maior que zero, o estado da animação é Walk
+				changeAnimationState (AnimationState.Walk);
 
-		if (ActorStateManager.isDead)															
+			else if (_actorState.absolutVelocityY > 0 && !_collisionState.isGrounded)	// Se a velocidade absoluta em Y é maior que zero, o estado da animação é Jump
+				changeAnimationState (AnimationState.Jump);			
+		}
+		else if (ActorStateManager.isDead)															
 		{
 			changeAnimationState (AnimationState.Dead);
 			die ();

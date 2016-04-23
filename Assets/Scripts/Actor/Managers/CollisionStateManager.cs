@@ -66,28 +66,32 @@ public class CollisionStateManager : MonoBehaviour
 		position.y += transform.position.y;								// Adiciona o offset em Y do gameObject
 
 		isGrounded = Physics2D.OverlapCircle (position, collisionBottomRadius, collisionLayer); // Detecta colisão para o chão
+		leftCollided = false;
+		rightCollided = false;
 
-		Vector2 pointA = Vector2.zero;									// Vetor de auxilio para detectar colisão
-		Vector2 pointB = Vector2.zero;									// Vetor de auxilio para detectar colisão
+		if (!isGrounded)
+		{
+			Vector2 pointA = Vector2.zero;									// Vetor de auxilio para detectar colisão
+			Vector2 pointB = Vector2.zero;									// Vetor de auxilio para detectar colisão
 
-		// Calculo da area de colisão do lado direito
-		pointA.x = _thisBoxCollider2D.bounds.max.x;
-		pointB.x = _thisBoxCollider2D.bounds.max.x + 0.005f;
-		pointA.y = (_thisBoxCollider2D.bounds.max.y) - sizeOffset;
+			// Calculo da area de colisão do lado direito
+			pointA.x = _thisBoxCollider2D.bounds.max.x;
+			pointB.x = _thisBoxCollider2D.bounds.max.x + 0.005f;
+			pointA.y = (_thisBoxCollider2D.bounds.max.y) - sizeOffset;
 
-		float groundOffset = isGrounded ? 0.005f : 0.0f;
-		pointB.y = (_thisBoxCollider2D.bounds.min.y - (_thisCircleCollider2D.radius / 2)) + groundOffset; 
+			float groundOffset = isGrounded ? 0.005f : 0.0f;
+			pointB.y = (_thisBoxCollider2D.bounds.min.y - (_thisCircleCollider2D.radius / 2)) + groundOffset; 
 
-		rightCollided = Physics2D.OverlapArea (pointA, pointB, collisionLayer);				// Detecta colisão do lado direito
-		Debug.DrawLine (pointA, pointB);													// Desenha esta linha para debug
+			rightCollided = Physics2D.OverlapArea (pointA, pointB, collisionLayer);				// Detecta colisão do lado direito
+			Debug.DrawLine (pointA, pointB);													// Desenha esta linha para debug
 
-		// Calculo da area de colisão do lado direito
-		pointA.x = _thisBoxCollider2D.bounds.min.x;
-		pointB.x = _thisBoxCollider2D.bounds.min.x - 0.005f;
+			// Calculo da area de colisão do lado direito
+			pointA.x = _thisBoxCollider2D.bounds.min.x;
+			pointB.x = _thisBoxCollider2D.bounds.min.x - 0.005f;
 
-		leftCollided = Physics2D.OverlapArea (pointA, pointB, collisionLayer);  			// Detecta colisão para lateral esquerda
-		Debug.DrawLine (pointA, pointB);													// Desenha esta linha para debug
-
+			leftCollided = Physics2D.OverlapArea (pointA, pointB, collisionLayer);  			// Detecta colisão para lateral esquerda
+			Debug.DrawLine (pointA, pointB);													// Desenha esta linha para debug
+		}			
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

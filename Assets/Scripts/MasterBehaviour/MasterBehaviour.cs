@@ -38,6 +38,8 @@ public abstract class MasterBehaviour : MonoBehaviour
 	//---------------------------------------------------------------------------------------------------------------
 	// Propriedades da Classe
 
+
+	/*
 	public float delayTime = 0;							// Tempo de recarga do poder
 	public int quantity = 0;							// Quantidade de poderes disponíveis
 
@@ -45,9 +47,9 @@ public abstract class MasterBehaviour : MonoBehaviour
 	private bool canActivate = true;					// Se a ativação do poder está disponível
 	private bool depleted = false;
 
-	public MouseManager mouseManager = null;			// Referência para MouseManager
-	public Button button = null;
-	public Image image = null;
+	//public MouseManager mouseManager = null;			// Referência para MouseManager
+	//public Button button = null;
+	//public Image image = null;
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MonoBehaviour
@@ -86,7 +88,11 @@ public abstract class MasterBehaviour : MonoBehaviour
 			canActivate = false;						// Desabilita a capacidade de ativação do poder
 			currentTime = 0;							// Reseta o cronômetro
 			button.interactable = false;				// Desativa o botão
-			mouseManager.masterPower = this;			// Passa a referência desse poder para o MouseManager
+
+
+
+
+			//mouseManager.masterPower = this;			// Passa a referência desse poder para o MouseManager
 
 			if (quantity <= 0)							// Checa se os recursos foram esgotados, caso positivo:
 			{
@@ -95,7 +101,7 @@ public abstract class MasterBehaviour : MonoBehaviour
 			}
 		}
 	}
-
+*/
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos abstrato do comportamento da invocação do poder
 

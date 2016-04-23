@@ -27,6 +27,7 @@ public class PowerSelection : MasterBehaviour
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MasterBehaviour
 
+	/*
 	// Use this for initialization
 	protected override void Awake () 
 	{
@@ -40,7 +41,7 @@ public class PowerSelection : MasterBehaviour
 	{
 		base.Update ();
 	} 
-
+	*/
 	//---------------------------------------------------------------------------------------------------------------
 
 	public override void Behaviour ()
@@ -64,7 +65,7 @@ public class PowerSelection : MasterBehaviour
 		// TODO: se usar lista, adiciona ele na lista
 		selecton = interactive;    													// Se for Interactive, marca a seleção nele
 		selecton.select();	
-		mouseManager.masterPower = null;											// Desativa a habilidade no MouseManager
+		MouseManager.masterPower = null;											// Desativa a habilidade no MouseManager
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

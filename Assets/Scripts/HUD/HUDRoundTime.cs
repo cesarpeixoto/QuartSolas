@@ -22,14 +22,14 @@ public class HUDRoundTime : MonoBehaviour
 		{
 			string minutes = Mathf.Floor (time / 60).ToString ("00");
 			string seconds = (time % 60).ToString ("00");
-			uiTextTimer.text = "Tempo: " + minutes + ":" + seconds; 
+			uiTextTimer.text = minutes + ":" + seconds; 
 		}
 		else
 		{
 			if (time >= 10)
-				uiTextTimer.text = "Tempo: " + time.ToString ("00");
+				uiTextTimer.text = time.ToString ("00");
 			else if(time < 10 && time >= 0)
-				uiTextTimer.text = "Tempo: <Color=red>" + time.ToString ("00") + "</color>";
+				uiTextTimer.text = "<Color=red>" + time.ToString ("00") + "</color>";
 			else if(time < 0)
 				uiTextTimer.text = "ACABOU!!!!";
 		}
