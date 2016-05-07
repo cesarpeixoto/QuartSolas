@@ -28,6 +28,9 @@ public class ActorStateManager : MonoBehaviour
 	public float absolutVelocityY = 0f;								// Velocidade Absoluta no eixo Y
 	public bool isGrounded = true;
 
+    // Ator escorregar
+    public static bool Slide = false;
+
 	// Gestão dos Itens:
 	private ItemActionAbstractBehaviour _currentItem = null;
 	public bool isShieled = false;  // talvez colocar statico, para tratar o shield no local da colisão
@@ -48,7 +51,7 @@ public class ActorStateManager : MonoBehaviour
 	{
 		get { return _currentItem; }
 		set 
-		{ 
+		{             
 			_currentItem = value; 
 			if (_currentItem.itemId == ItemID.Shield) 									// Checa se o item é um escudo
 			{

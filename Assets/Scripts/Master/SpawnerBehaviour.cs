@@ -4,7 +4,7 @@ Curso: Tecnologia em Jogos Digitais - 2o Semestre - 2016
 Professor: Enric Llagostera
 //---------------------------------------------------------------------------------------------------------------
 
-Classe abstrata para ser a base de todos os actions do Mestre relacionado a invocação de objetos no mapa, que serão programados.
+Classe reponsável pela invocação do poder de seleção de plataformas no mapa do poder de espinhos.
 
 //---------------------------------------------------------------------------------------------------------------
 

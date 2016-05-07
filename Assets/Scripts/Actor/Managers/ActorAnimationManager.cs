@@ -55,7 +55,10 @@ public class ActorAnimationManager : MonoBehaviour
 				changeAnimationState (AnimationState.Walk);
 
 			else if (_actorState.absolutVelocityY > 0 && !_collisionState.isGrounded)	// Se a velocidade absoluta em Y é maior que zero, o estado da animação é Jump
-				changeAnimationState (AnimationState.Jump);			
+				changeAnimationState (AnimationState.Jump);	
+
+            if (ActorStateManager.Slide)                                                // Animação de escorregar!!!!!!!!!!
+                changeAnimationState (AnimationState.Idle);
 		}
 		else if (ActorStateManager.isDead)															
 		{
