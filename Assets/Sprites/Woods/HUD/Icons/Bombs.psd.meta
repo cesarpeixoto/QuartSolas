@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 5c9212c53a801af4ebc20daa3b75a34f
+timeCreated: 1461953677
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Impact Bomb Icon
+    21300002: 1 Second Bomb Icon
+    21300004: 2 Seconds Bomb Icon
+    21300006: 3 Seconds Bomb Icon
+    21300008: Impact Bomb
+    21300010: 1 Second Bomb
+    21300012: 2 Seconds Bomb
+    21300014: 3 Seconds Bomb
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 108
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Impact Bomb Icon
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 262
+        width: 157
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78.5, y: 72.5}
+        - {x: 76.5, y: 75.5}
+        - {x: -78.5, y: 75.5}
+        - {x: -78.5, y: -75.5}
+        - {x: 73.5, y: -75.5}
+        - {x: 78.5, y: -70.5}
+    - name: 1 Second Bomb Icon
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 262
+        width: 157
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.5, y: 75.5}
+        - {x: -78.5, y: -75.5}
+        - {x: 78.5, y: -75.5}
+        - {x: 78.5, y: 75.5}
+    - name: 2 Seconds Bomb Icon
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 262
+        width: 157
+        height: 151
+      alignment: 9
+      pivot: {x: 0.7708954, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.96942, y: 71.5}
+        - {x: 31.969421, y: 75.5}
+        - {x: -121.03058, y: 75.5}
+        - {x: -121.03058, y: -75.5}
+        - {x: 28.969421, y: -75.5}
+        - {x: 33.96942, y: -71.5}
+        - {x: 35.96942, y: -69.5}
+        - {x: 35.96942, y: 69.5}
+    - name: 3 Seconds Bomb Icon
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 262
+        width: 157
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 78.5, y: 75.5}
+        - {x: -78.5, y: 75.5}
+        - {x: -78.5, y: -75.5}
+        - {x: 75.5, y: -75.5}
+        - {x: 77.5, y: -73.5}
+        - {x: 77.5, y: -71.5}
+        - {x: 78.5, y: -70.5}
+    - name: Impact Bomb
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 23
+        width: 105
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 59.5}
+        - {x: -52.5, y: 54.5}
+        - {x: -52.5, y: -18.5}
+        - {x: -46.5, y: -49.5}
+        - {x: -8.5, y: -59.5}
+        - {x: 52.5, y: -59.5}
+        - {x: 52.5, y: 13.5}
+        - {x: 34.5, y: 59.5}
+    - name: 1 Second Bomb
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 23
+        width: 105
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 59.5}
+        - {x: -52.5, y: 54.5}
+        - {x: -52.5, y: -18.5}
+        - {x: -46.5, y: -49.5}
+        - {x: -8.5, y: -59.5}
+        - {x: 52.5, y: -59.5}
+        - {x: 52.5, y: 13.5}
+        - {x: 34.5, y: 59.5}
+    - name: 2 Seconds Bomb
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 23
+        width: 105
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 59.5}
+        - {x: -52.5, y: 54.5}
+        - {x: -52.5, y: -18.5}
+        - {x: -46.5, y: -49.5}
+        - {x: -8.5, y: -59.5}
+        - {x: 52.5, y: -59.5}
+        - {x: 52.5, y: 13.5}
+        - {x: 34.5, y: 59.5}
+    - name: 3 Seconds Bomb
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 31
+        width: 105
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 59.5}
+        - {x: -52.5, y: 54.5}
+        - {x: -52.5, y: -18.5}
+        - {x: -46.5, y: -49.5}
+        - {x: -8.5, y: -59.5}
+        - {x: 52.5, y: -59.5}
+        - {x: 52.5, y: 13.5}
+        - {x: 34.5, y: 59.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

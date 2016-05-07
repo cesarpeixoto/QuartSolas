@@ -1,0 +1,105 @@
+fileFormatVersion: 2
+guid: 016642615bebf9f4b93ef7d77c824c75
+timeCreated: 1461951099
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HUD_Flowers_0
+    21300002: HUD_Flowers_1
+    21300004: HUD_Flowers_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 108
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HUD_Flowers_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 99
+        width: 227
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 113.5, y: 41.5}
+        - {x: 110.5, y: 57.5}
+        - {x: 88.5, y: 93.5}
+        - {x: 79.5, y: 100.5}
+        - {x: -72.5, y: 100.5}
+        - {x: -81.5, y: 95.5}
+        - {x: -100.5, y: 67.5}
+        - {x: -113.5, y: 32.5}
+        - {x: -113.5, y: 0.5}
+        - {x: -107.5, y: -41.5}
+        - {x: -67.5, y: -89.5}
+        - {x: -38.5, y: -99.5}
+        - {x: -29.5, y: -100.5}
+        - {x: 45.5, y: -100.5}
+        - {x: 107.5, y: -58.5}
+        - {x: 113.5, y: -33.5}
+    - name: HUD_Flowers_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 60
+        width: 35
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 19.5}
+        - {x: -17.5, y: -14.5}
+        - {x: -9.5, y: -19.5}
+        - {x: 16.5, y: -19.5}
+        - {x: 17.5, y: -18.5}
+        - {x: 17.5, y: 13.5}
+        - {x: 14.5, y: 19.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
