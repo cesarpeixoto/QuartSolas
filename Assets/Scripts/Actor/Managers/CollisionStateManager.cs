@@ -98,7 +98,7 @@ public class CollisionStateManager : MonoBehaviour
 
 	void OnDrawGizmos()
 	{
-		Gizmos.color = debugCollisionColor;
+        Gizmos.color = Color.red;//debugCollisionColor;
 		Vector2 position = bottomPosition;							// referencia para bottomPosition;
 		position.x += transform.position.x + 0.01f;							// Adiciona o offset em X do gameObject
 		position.y += transform.position.y;							// Adiciona o offset em Y do gameObject

@@ -31,7 +31,7 @@ using System.Collections.Generic;
 
 public class PowersManager : MonoBehaviour 
 {
-	public enum ConstPowerList { Bomb, ClockBomb1, ClockBomb2, ClockBomb3, Spike, Confusion, Freeze, Depleted }										// Enum para controlar os índices para os poderes
+	public enum ConstPowerList { Bomb, ClockBomb1, ClockBomb2, ClockBomb3, Spike, Confusion, Freeze, VerticalMove, HorizontalMove, Depleted }										// Enum para controlar os índices para os poderes
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Propriedades da Classe

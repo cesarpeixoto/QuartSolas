@@ -23,7 +23,7 @@ public class PowerSpikes : MasterBehaviour
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Propriedades da Classe
-
+    public float lifeTime = 10;
 	public GameObject spawnavel = null;
 
 	//---------------------------------------------------------------------------------------------------------------
@@ -36,10 +36,12 @@ public class PowerSpikes : MasterBehaviour
 		if (hit.collider != null)													// Se atingiu um colisor, sai da função
 			return;
 
-		if (!hit) // é estranho, mas com raycast null = true
+		if (!hit) // Se não clicou em colisor, ele fará o spawn
 		{ 
-			GameObject.Instantiate (spawnavel, position, Quaternion.identity);
-			MouseManager.masterPower = null;										// Desativa a habilidade no MouseManager
+            GameObject temp = (GameObject)Instantiate (spawnavel, position, Quaternion.identity);
+            temp.GetComponent<SpawnerSpikes>().lifeTime = lifeTime;
+            MouseManager.masterPower = null;										// Desativa a habilidade no MouseManager
+
 		}
 	}
 

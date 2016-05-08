@@ -378,7 +378,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443122, guid: 3c20cf26994497843a867d64d2900a52, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c20cf26994497843a867d64d2900a52, type: 2}
@@ -1153,6 +1153,7 @@ GameObject:
   - 60: {fileID: 477472144}
   - 68: {fileID: 477472143}
   - 114: {fileID: 477472145}
+  - 114: {fileID: 477472146}
   m_Layer: 8
   m_Name: Platform 6
   m_TagString: Untagged
@@ -1268,6 +1269,34 @@ MonoBehaviour:
   material: {fileID: 6200000, guid: 0675ea65b9c41b546a39c07ac8b1d0ed, type: 2}
   effects: {fileID: 1987083876}
   lifeTime: 5
+  _active: 0
+--- !u!114 &477472146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477472140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a765f8eed0927740832f69386868697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canVerticalMove: 1
+  canHorizontalMove: 1
+  lifeTime: 10
+  moveSpeed: 2
+  verticalRoute:
+  - {x: 0, y: 1.78}
+  - {x: 0, y: -2.1}
+  verticalDebugColor:
+    serializedVersion: 2
+    rgba: 4294967040
+  horizontalRoute:
+  - {x: -3.48, y: 0}
+  - {x: 2.72, y: 0}
+  horizontalDebugColor:
+    serializedVersion: 2
+    rgba: 4278190335
   _active: 0
 --- !u!1 &498633741
 GameObject:
@@ -1608,7 +1637,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440884, guid: 5539a89ba8081464fafe0edd738e3e86, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5539a89ba8081464fafe0edd738e3e86, type: 2}
@@ -2010,7 +2039,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469170, guid: cfb50255862739e43afc0cbd3a8558af, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfb50255862739e43afc0cbd3a8558af, type: 2}
@@ -2523,7 +2552,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499150, guid: a483402b27015134085b7409e3df8ce7, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a483402b27015134085b7409e3df8ce7, type: 2}
@@ -3129,7 +3158,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431530, guid: ad304a3bacc45d145a69fcb2d0faa5e5, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad304a3bacc45d145a69fcb2d0faa5e5, type: 2}
@@ -3311,7 +3340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: 0000000001000000
-  speed: 4
+  speed: 3.6
   frozzen: 0
 --- !u!114 &1660555229
 MonoBehaviour:
@@ -3501,7 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: 04000000
-  jumpForce: 11
+  jumpForce: 9.5
   jumpDelay: 0.1
   jumpCount: 2
 --- !u!1 &1670506784
@@ -3682,7 +3711,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452678, guid: f81848597fe3b0e41b14727636721c15, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 19856286, guid: f81848597fe3b0e41b14727636721c15, type: 2}
       propertyPath: EmissionModule.enabled
@@ -4138,6 +4167,7 @@ GameObject:
   - 212: {fileID: 1883343438}
   - 60: {fileID: 1883343440}
   - 68: {fileID: 1883343441}
+  - 114: {fileID: 1883343442}
   m_Layer: 8
   m_Name: Platform 2
   m_TagString: Untagged
@@ -4248,6 +4278,34 @@ EdgeCollider2D:
   - {x: 0.034726143, y: -1.8946326}
   - {x: -0.76168156, y: -1.7985208}
   - {x: -0.6666331, y: 0.19600034}
+--- !u!114 &1883343442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1883343437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a765f8eed0927740832f69386868697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canVerticalMove: 1
+  canHorizontalMove: 1
+  lifeTime: 5
+  moveSpeed: 2
+  verticalRoute:
+  - {x: 0, y: 0.84}
+  - {x: 0, y: -1.05}
+  verticalDebugColor:
+    serializedVersion: 2
+    rgba: 4294967040
+  horizontalRoute:
+  - {x: -1.66, y: 0}
+  - {x: 1.98, y: 0}
+  horizontalDebugColor:
+    serializedVersion: 2
+    rgba: 4278190335
+  _active: 0
 --- !u!1 &1894765846
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,6 +6524,8 @@ GameObject:
   - 114: {fileID: 2110631033}
   - 114: {fileID: 2110631034}
   - 114: {fileID: 2110631035}
+  - 114: {fileID: 2110631036}
+  - 114: {fileID: 2110631037}
   m_Layer: 5
   m_Name: PowerResourceManager
   m_TagString: Untagged
@@ -6524,21 +6584,21 @@ MonoBehaviour:
   - name: 1 Second Bomb
     power: {fileID: 2110631032}
     powerIndex: 1
-    quantity: 2
+    quantity: 1
     distributed: 0
     icon: {fileID: 21300000, guid: f1e36095d08cdf3428e43ddcba3c0a07, type: 3}
     imageInfo: {fileID: 21300010, guid: 5c9212c53a801af4ebc20daa3b75a34f, type: 3}
   - name: 2 Seconds Bomb
     power: {fileID: 2110631031}
     powerIndex: 2
-    quantity: 2
+    quantity: 1
     distributed: 0
     icon: {fileID: 21300000, guid: 43068b9461761fd46967fe95aba34c05, type: 3}
     imageInfo: {fileID: 21300012, guid: 5c9212c53a801af4ebc20daa3b75a34f, type: 3}
   - name: 3 Seconds Bomb
     power: {fileID: 2110631030}
     powerIndex: 3
-    quantity: 2
+    quantity: 1
     distributed: 0
     icon: {fileID: 21300000, guid: 1544688f2f9281b41bdd1bd886004a08, type: 3}
     imageInfo: {fileID: 21300014, guid: 5c9212c53a801af4ebc20daa3b75a34f, type: 3}
@@ -6552,17 +6612,31 @@ MonoBehaviour:
   - name: Confusion
     power: {fileID: 2110631034}
     powerIndex: 5
-    quantity: 6
+    quantity: 2
     distributed: 0
     icon: {fileID: 21300000, guid: 6d1680ab21b3b3d47b1106703fabd76b, type: 3}
     imageInfo: {fileID: 21300000, guid: 56e831d36ea6eb245b1387ba49adc322, type: 3}
   - name: Freeze
     power: {fileID: 2110631035}
     powerIndex: 6
-    quantity: 6
+    quantity: 1
     distributed: 0
     icon: {fileID: 21300000, guid: 2740070bfee6d8249a990f91407c9f64, type: 3}
     imageInfo: {fileID: 21300000, guid: 2740070bfee6d8249a990f91407c9f64, type: 3}
+  - name: Vertical Move
+    power: {fileID: 2110631037}
+    powerIndex: 7
+    quantity: 20
+    distributed: 0
+    icon: {fileID: 21300000, guid: b7ab16be63ccc7f4790a124d030f4b21, type: 3}
+    imageInfo: {fileID: 21300000, guid: b7ab16be63ccc7f4790a124d030f4b21, type: 3}
+  - name: Horizontal Move
+    power: {fileID: 2110631036}
+    powerIndex: 8
+    quantity: 20
+    distributed: 0
+    icon: {fileID: 21300000, guid: 358e525ba76558e4fbbad567ac7bbae8, type: 3}
+    imageInfo: {fileID: 21300000, guid: 358e525ba76558e4fbbad567ac7bbae8, type: 3}
   image: {fileID: 1870620601}
   count: {fileID: 694112046}
   depleted: 0
@@ -6613,6 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fcad4b222b1764fba74ef15a980a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 10
   spawnavel: {fileID: 156778, guid: 5539a89ba8081464fafe0edd738e3e86, type: 2}
 --- !u!114 &2110631034
 MonoBehaviour:
@@ -6636,6 +6711,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfde24195c3738148937c06063fcce06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
+--- !u!114 &2110631036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2110631026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f241392a28f91394abb3d79759291626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
+--- !u!114 &2110631037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2110631026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed63779e3cbd074d9b41fd8e6540b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10

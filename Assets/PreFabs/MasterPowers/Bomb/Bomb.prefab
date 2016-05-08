@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.239, y: -0.962, z: 0}
+  m_LocalPosition: {x: 0.11956668, y: -1.6064637, z: 0}
   m_LocalScale: {x: 0.34127364, y: 0.37521023, z: 4.8409476}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 3
   onInpact: 1
-  explosionRadius: 1.3
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  RayCount: 4
+  explosionRadius: 0.55
   collisionLayer:
     serializedVersion: 2
     m_Bits: 512
