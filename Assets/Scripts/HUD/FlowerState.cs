@@ -105,9 +105,7 @@ public class FlowerState : MonoBehaviour
 			//aqui nós vamos tratar as imagens;
 
 		}			
-	}
-		
-
+	}		
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Método para ser invocado no clique do botão de poder do Mestre
@@ -121,7 +119,7 @@ public class FlowerState : MonoBehaviour
 
 		MouseManager.masterPower = thisPower;
 		SetDeltaTime ();
-		powerManager.UpdateResource (pwrSelected);
+		powerManager.UpdateResource (pwrSelected); //////////////////////////////// AQUI ESTÁ A BAIXA DOS PODERES NOS RECURSOS  //////////////////////////////////////////////////
 
 		// Configura a imagem e o label e o icone
 		//icon.enabled = false;

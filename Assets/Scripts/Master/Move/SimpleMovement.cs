@@ -38,6 +38,9 @@ public class SimpleMovement : MonoBehaviour
 
     private float deltaTime = 0f;
 
+    private bool isHorizontalMoving;
+    private bool isVerticalMoving;
+
 	// Use this for initialization
 	void Awake () 
     {
@@ -70,11 +73,15 @@ public class SimpleMovement : MonoBehaviour
 
     public void activeHorizontalMove()
     {
+        if (isVerticalMoving)                                           // não deixa ativar os dois poderes ao mesmo tempo!!!
+            return;
+        
         if (canHorizontalMove)
         {
             route[0] = startPosition + horizontalRoute[0];
             route[1] = startPosition + horizontalRoute[1];
             Active();
+            isHorizontalMoving = true;
         }
         else
             Debug.LogError("Este movimento não estão está permitido");
@@ -82,11 +89,15 @@ public class SimpleMovement : MonoBehaviour
 
     public void activeVerticalMove()
     {
+        if (isHorizontalMoving)
+            return;
+        
         if (canVerticalMove)
         {
             route[0] = startPosition + verticalRoute[0];
             route[1] = startPosition + verticalRoute[1];
             Active();
+            isVerticalMoving = true;
         }
         else
             Debug.LogError("Este movimento não estão está permitido");
@@ -107,6 +118,8 @@ public class SimpleMovement : MonoBehaviour
     {
         _active = false;
         deltaTime = 0;
+        isHorizontalMoving = false;
+        isVerticalMoving = false;
     }
         
     private void OnCollisionEnter2D(Collision2D other)
