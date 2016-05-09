@@ -56,7 +56,7 @@ public class Walk : ActionBehavior
 	{
 		bool lateralCollided = (_collisionState.leftCollided || _collisionState.rightCollided);             // Checa se existe alguma colisão lateral
 
-		if ((right || left) && !(lateralCollided && !_collisionState.isGrounded))
+        if ((right || left) && !(lateralCollided && !_collisionState.isGrounded) && !ActorStateManager.isDead)
 		{
             float velocityX = speed * Mathf.Abs (Input.GetAxis("Horizontal")) * (int)_inputState.direction; // Calcula a velocidade no eixo X (OBS1)
 

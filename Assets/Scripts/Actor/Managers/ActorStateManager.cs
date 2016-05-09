@@ -90,6 +90,22 @@ public class ActorStateManager : MonoBehaviour
 
 	public void OnHit()
 	{
+        if(!ActorStateManager.isDead)
+        {
+            Vector2 velocity = _thisBody2D.velocity;
+            if (velocity.y == 0)
+                velocity.y = -1;
+            /*
+            if (velocity.y > 3)
+                velocity.y = 3;
+            if (velocity.y < -3)
+                velocity.y = -3;
+            */
+
+            //_thisBody2D.AddForce(-(velocity* 10));
+            _thisBody2D.AddForce((velocity * -5), ForceMode2D.Impulse);
+        }
+
 		if(!isShieled)
 			ActorStateManager.isDead = true;
 		else
@@ -101,6 +117,7 @@ public class ActorStateManager : MonoBehaviour
             isShieled = false;                                                                                  // Configura o estado de escudo para falso
         }
 			
+
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

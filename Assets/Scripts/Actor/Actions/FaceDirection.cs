@@ -46,9 +46,13 @@ public class FaceDirection : ActionBehavior
 		else if(left)																// Se o controle for para esquerda, aponta o estado do objeto para esquerda
 			_inputState.direction = Directions.Left; 
 
-		Vector3 thisLocalScale = transform.localScale;			                    // Recebe a escala atual					
-		thisLocalScale.x = Mathf.Abs(thisLocalScale.x) * (int)_inputState.direction;// Preserva a escala, alterando a direção de X
-		transform.localScale = thisLocalScale;                                      // Atribui a nova escala
+        if(!ActorStateManager.isDead)
+        {
+            Vector3 thisLocalScale = transform.localScale;                              // Recebe a escala atual                    
+            thisLocalScale.x = Mathf.Abs(thisLocalScale.x) * (int)_inputState.direction;// Preserva a escala, alterando a direção de X
+            transform.localScale = thisLocalScale;                                      // Atribui a nova escala
+        }
+		
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

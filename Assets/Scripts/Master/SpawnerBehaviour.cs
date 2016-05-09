@@ -24,9 +24,9 @@ public abstract class SpawnerBehaviour : MonoBehaviour
 	public bool onInpact = false;
 	protected float deltaTime = 0.00f; 						// Tempo decorrido
 	private bool runing = false;
-
-    public LayerMask collisionMask;
-    public int RayCount = 4;
+    protected bool _active;
+    //public LayerMask collisionMask;
+    //public int RayCount = 4;
 
 	protected BoxCollider2D _thisBoxCollider2D = null;
 
@@ -55,6 +55,12 @@ public abstract class SpawnerBehaviour : MonoBehaviour
 
 	protected virtual void OnCollisionEnter2D(Collision2D other)
 	{
+        if (!_active)
+        {
+            lifeTime = 0.8f;
+            onInpact = false;
+        }
+            
 		if (onInpact)
 			behaviour ();
 	}
@@ -69,7 +75,7 @@ public abstract class SpawnerBehaviour : MonoBehaviour
 
 
 
-
+    /*
     // Conjunto de funções para impedir o comportamente de spawn dentro das plataformas... A origem do Bug era outro
     // Todo este conjunto ficou em desuso.
 	//---------------------------------------------------------------------------------------------------------------
@@ -184,4 +190,6 @@ public abstract class SpawnerBehaviour : MonoBehaviour
     struct RayHitCount { public int count; public float distance; }
 
     //---------------------------------------------------------------------------------------------------------------
+
+    */
 }

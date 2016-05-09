@@ -80,6 +80,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   explosionParticles: {fileID: 113834, guid: 1bd362c45a6475c4ebb4925e2e62326b, type: 2}
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 768
+  RayCount: 4
 --- !u!212 &21287404
 SpriteRenderer:
   m_ObjectHideFlags: 1
