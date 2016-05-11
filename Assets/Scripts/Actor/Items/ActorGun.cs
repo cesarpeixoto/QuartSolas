@@ -44,7 +44,7 @@ public class ActorGun : Collectable
 		if (equipBehavior.CurrentItemId != null)							// Confere se existe algum item equipado.
 			equipBehavior.CurrentItemId.enabled = false;					// Se houver, desabilita o script de comportamento.
 
-		equipBehavior.CurrentItemId = equipBehavior.GetComponent<ActorGunBehaviour> ();	// Passa a referencia para controle interno da classe
+        equipBehavior.CurrentItemId = target.GetComponent<ActorGunBehaviour> ();	// Passa a referencia para controle interno da classe
 		target.GetComponent<ActorGunBehaviour>().enabled = true;
 
 	}

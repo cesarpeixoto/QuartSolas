@@ -154,19 +154,21 @@ public class SimpleMovement : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = verticalDebugColor;
-        Vector3 center = new Vector3(transform.position.x + verticalRoute[0].x, transform.position.y + verticalRoute[0].y + 0.15f , 0);
         Vector3 size = new Vector3(GetComponent<PolygonCollider2D>().bounds.size.x, GetComponent<PolygonCollider2D>().bounds.size.y, 1);
-        if(canVerticalMove)
-            Gizmos.DrawWireCube(center, size);
-        center = new Vector3(transform.position.x + verticalRoute[1].x, transform.position.y + verticalRoute[1].y + 0.15f , 0);
-        if(canVerticalMove)
-            Gizmos.DrawWireCube(center, size);
 
+        if(canVerticalMove)
+        {
+            Gizmos.color = verticalDebugColor;
+            Vector3 center = new Vector3(transform.position.x + verticalRoute[0].x, transform.position.y + verticalRoute[0].y + 0.15f , 0);
+            Gizmos.DrawWireCube(center, size);
+            center = new Vector3(transform.position.x + verticalRoute[1].x, transform.position.y + verticalRoute[1].y + 0.15f , 0);
+            Gizmos.DrawWireCube(center, size);            
+        }
+            
         if(canHorizontalMove)
         {
             Gizmos.color = horizontalDebugColor;
-            center = new Vector3(transform.position.x + horizontalRoute[0].x, transform.position.y + horizontalRoute[0].y + 0.15f , 0);
+            Vector3 center = new Vector3(transform.position.x + horizontalRoute[0].x, transform.position.y + horizontalRoute[0].y + 0.15f , 0);
             Gizmos.DrawWireCube(center, size);
             center = new Vector3(transform.position.x + horizontalRoute[1].x, transform.position.y + horizontalRoute[1].y + 0.15f , 0);
             Gizmos.DrawWireCube(center, size);            

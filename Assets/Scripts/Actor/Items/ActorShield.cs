@@ -29,11 +29,19 @@ public class ActorShield : Collectable
 
 	protected override void OnCollect (GameObject target)
 	{
-		//target.AddComponent<ActorGunBehaviour> ();
+        ActorStateManager equipBehavior = target.GetComponent<ActorStateManager> ();
 
-        ItemActionAbstractBehaviour temp = new ItemActionAbstractBehaviour();
-        temp.itemId = ItemID.Shield;
-        target.GetComponent<ActorStateManager>().CurrentItemId = temp;    //.isShieled = true;
+        if (equipBehavior.CurrentItemId != null)                            // Confere se existe algum item equipado.
+            equipBehavior.CurrentItemId.enabled = false;                    // Se houver, desabilita o script de comportamento.
+
+        equipBehavior.isShieled = true;
+        //equipBehavior.CurrentItemId = target.GetComponent<ActorShieldBehaviour> ();    // Passa a referencia para controle interno da classe
+        target.GetComponent<ActorShieldBehaviour>().enabled = true;
+
+
+        //ItemActionAbstractBehaviour temp = new ItemActionAbstractBehaviour();
+        //temp.itemId = ItemID.Shield;
+        //target.GetComponent<ActorStateManager>().CurrentItemId = temp;    //.isShieled = true;
 	}
 
 }

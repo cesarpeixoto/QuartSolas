@@ -40,11 +40,23 @@ public class ActorGunBehaviour : ItemActionAbstractBehaviour
 	{
 		base.Awake ();
 		itemId = ItemID.Gun;
-	}
-		
+	}	  
+
+    void OnEnable()
+    {
+        GetComponent<Animator>().SetInteger ("EquippedItem", (int)itemId);   // Altera a animação para animação com o item.
+    }
+
+    void OnDisable()
+    {
+        GetComponent<Animator>().SetInteger ("EquippedItem", 0);   // Altera a animação para animação com o item.
+    }
+
 	// Update is called once per frame
-	protected virtual void Update () 
+    protected override void Update()
 	{
+        base.Update();
+
 		if(projectilePrefab != null)
 		{
 			bool canFire = _inputState.getControlValue (inputControls [0]);

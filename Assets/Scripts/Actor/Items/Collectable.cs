@@ -18,7 +18,7 @@ $Notice: (C) Copyright 2016 by Cesar Peixoto. All Rights Reserved. $     Finaliz
 using UnityEngine;
 using System.Collections;
 
-public enum ItemID { Notting, Gun, Shield }
+public enum ItemID { Notting, Gun, Shield, Boot, hourglass }
 
 public class Collectable : MonoBehaviour 
 {

@@ -98,7 +98,7 @@ public class SpawnerBomb : SpawnerBehaviour
 
         RayCastOrigins origins = GetRayCastOrigins(collider);
         float horizontalSpace = origins.size.x / (RayCount - 1);
-        float verticalSpace = origins.size.y / (RayCount - 1);
+        //float verticalSpace = origins.size.y / (RayCount - 1);
 
         for (int i = 0; i < RayCount; i++)              // Parte de baixo
         {

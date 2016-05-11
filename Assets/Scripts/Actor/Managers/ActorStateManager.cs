@@ -42,7 +42,7 @@ public class ActorStateManager : MonoBehaviour
 	private Rigidbody2D _thisBody2D = null;							// Referencia para RigidBody2D
 	private InputState _thisInputState = null;						// Referencia para InputState
 	private CollisionStateManager _thisCollisionState;				// Referencia para CollisionStateManager
-	private Animator _thisAnimator;									// Referencia para Animator
+	//private Animator _thisAnimator;									// Referencia para Animator
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Properts Get e Set
@@ -52,15 +52,8 @@ public class ActorStateManager : MonoBehaviour
 		get { return _currentItem; }
 		set 
 		{             
-			_currentItem = value; 
-			if (_currentItem.itemId == ItemID.Shield) 									// Checa se o item é um escudo
-			{
-				isShieled = true;
-                this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-				_currentItem = null;
-			}
-			else	
-				_thisAnimator.SetInteger ("EquippedItem", (int)_currentItem.itemId);	// Altera a animação para animação com o item.
+			_currentItem = value; 			
+		    //_thisAnimator.SetInteger ("EquippedItem", (int)_currentItem.itemId);	// Altera a animação para animação com o item.
 		}
 	}
         
@@ -72,7 +65,7 @@ public class ActorStateManager : MonoBehaviour
 		_thisBody2D 		= GetComponent<Rigidbody2D> ();					// Inicializa a referência
 		_thisInputState 	= GetComponent<InputState> ();
 		_thisCollisionState = GetComponent<CollisionStateManager> ();
-		_thisAnimator		= GetComponent<Animator> ();
+		//_thisAnimator		= GetComponent<Animator> ();
  	}
 		
 	// Update is called once per frame
@@ -112,7 +105,8 @@ public class ActorStateManager : MonoBehaviour
         {
             Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.11f, -1.0f);          // recebe posição
             GameObject brokenShield = (GameObject)Instantiate(shieldParticles, position, Quaternion.identity);  // Cria instancia das particulas
-            this.transform.GetChild(0).gameObject.SetActive(false);                                             // Desativa a renderização do sprite do escudo
+            //this.transform.GetChild(0).gameObject.SetActive(false);                                             // Desativa a renderização do sprite do escudo
+            GetComponent<ActorShieldBehaviour>().enabled = false;
             Destroy(brokenShield, 1.7f);                                                                        // Destroi as particulas no tempó: Duration + StartLifetime
             isShieled = false;                                                                                  // Configura o estado de escudo para falso
         }
