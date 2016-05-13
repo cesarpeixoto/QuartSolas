@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bb8b1756bdecc4dafb8f64b7f30c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  lifeTime: 1.3
   spkike: {fileID: 193242, guid: 0cd3aa52ab053f740a81f809f3d0dd19, type: 2}
   tempLifeTime: 10
 --- !u!212 &21261848

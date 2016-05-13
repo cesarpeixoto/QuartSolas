@@ -33,7 +33,7 @@ namespace Managers
             GameManagerMain.GetInstance().GameMenuEvent               += OnGamePause;             
             GameManagerMain.GetInstance().ActorItemGlossaryEvent      += OnGamePause;
             GameManagerMain.GetInstance().MasterPowersGlossaryEvent   += OnGamePause;
-            GameManagerMain.GetInstance().MatchSummaryEvent           += OnGamePause;
+            //GameManagerMain.GetInstance().MatchSummaryEvent           += OnGamePause;
         }
 
         private void OnDisable()
@@ -42,7 +42,7 @@ namespace Managers
             GameManagerMain.GetInstance().GameMenuEvent               -= OnGamePause;             
             GameManagerMain.GetInstance().ActorItemGlossaryEvent      -= OnGamePause;
             GameManagerMain.GetInstance().MasterPowersGlossaryEvent   -= OnGamePause;
-            GameManagerMain.GetInstance().MatchSummaryEvent           -= OnGamePause;
+            //GameManagerMain.GetInstance().MatchSummaryEvent           -= OnGamePause;
         }
 
         //---------------------------------------------------------------------------------------------------------------

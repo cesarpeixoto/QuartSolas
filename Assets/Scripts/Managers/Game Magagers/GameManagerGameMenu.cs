@@ -27,6 +27,16 @@ namespace Managers
         //---------------------------------------------------------------------------------------------------------------
         // Métodos herdados de MonoBehaviour 
 
+        void OnEnable()
+        {
+            GameManagerMain.GetInstance().GameMenuEvent += OnGameMenu;
+        }
+
+        void OnDisable()
+        {
+            GameManagerMain.GetInstance().GameMenuEvent -= OnGameMenu;
+        }
+            
         // Update is called once per frame
         private void Update () 
         {
@@ -34,7 +44,7 @@ namespace Managers
                                !GameManagerMain.GetInstance().isMasterPowersGlossaryOn && !GameManagerMain.GetInstance().isMatchSummaryOn);
 
             if (Input.GetKeyUp(KeyCode.Escape) && conditions)
-                OnGameMenu();
+                GameManagerMain.GetInstance().CallEventGameMenu();
         }
             
         //---------------------------------------------------------------------------------------------------------------
@@ -46,7 +56,7 @@ namespace Managers
             {
                 GameMenuCanvasUI.SetActive(!GameMenuCanvasUI.activeSelf);                   // Inverte o estado atual de ativação do Canvas.
                 GameManagerMain.GetInstance().isGameMenuOn = !GameManagerMain.GetInstance().isGameMenuOn;                // Inverte o estado do flag do Gerenciador de Eventos.
-                GameManagerMain.GetInstance().CallEventGameMenu();                                        // Dispara o evento GameMenu.
+                //GameManagerMain.GetInstance().CallEventGameMenu();                                        // Dispara o evento GameMenu.
             }
             else
                 Debug.LogError("Nenhum Menu Atribuido ao GameManagerGameMenu!");

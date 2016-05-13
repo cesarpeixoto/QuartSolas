@@ -89,12 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ceaa0826139654db733434f32dc170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 30
+  lifeTime: 10
   onInpact: 0
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 768
-  RayCount: 4
 --- !u!212 &21264362
 SpriteRenderer:
   m_ObjectHideFlags: 1

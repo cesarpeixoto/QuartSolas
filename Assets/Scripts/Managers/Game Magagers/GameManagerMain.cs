@@ -62,6 +62,12 @@ namespace Managers
             _Instance = this;
         }
 
+        // Na destruição deste objeto, Instance deverá está disponível para o Manager da próxima Scene.
+        private void OnDestroy()
+        {
+            _Instance = null;
+        }
+
         //---------------------------------------------------------------------------------------------------------------
         // Método responsável pela chamada do evento GameMenu
 

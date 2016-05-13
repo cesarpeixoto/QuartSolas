@@ -119,7 +119,7 @@ public class ActorStateManager : MonoBehaviour
 
 	public void die()
 	{
-		Invoke ("restart", 1.7f);
+		Invoke ("restart", 1.0f);
 	}
 
 	//---------------------------------------------------------------------------------------------------------------
@@ -129,8 +129,10 @@ public class ActorStateManager : MonoBehaviour
 	{
 		//GameObject actor = GameObject.FindGameObjectWithTag ("Actor");
 		Destroy (gameObject);
-		SceneManager.LoadScene(0);
+		//SceneManager.LoadScene(0);
 		ActorStateManager.isDead = false;
+        Managers.GameManagerMatchSummary.actorWins = false;
+        Managers.GameManagerMain.GetInstance().CallEventMatchSummary();
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

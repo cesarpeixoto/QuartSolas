@@ -23,10 +23,20 @@ namespace Managers
         //---------------------------------------------------------------------------------------------------------------
         // Propriedades da Classe
 
-        public GameObject MasterPowersMenuCanvasUI = null;                                          // Referência para o Canvas do GameMenu
+        public GameObject GlossaryMenuCanvasUI = null;                                          // Referência para o Canvas do GameMenu
 
         //---------------------------------------------------------------------------------------------------------------
         // Métodos herdados de MonoBehaviour 
+
+        void OnEnable()
+        {
+            GameManagerMain.GetInstance().MasterPowersGlossaryEvent += OnMasterPowersGlossary;
+        }
+
+        void OnDisable()
+        {
+            GameManagerMain.GetInstance().MasterPowersGlossaryEvent -= OnMasterPowersGlossary;
+        }
 
         // Update is called once per frame
         private void Update () 
@@ -35,7 +45,7 @@ namespace Managers
                 !GameManagerMain.GetInstance().isGameMenuOn && !GameManagerMain.GetInstance().isMatchSummaryOn);
 
             if (Input.GetMouseButtonDown(2) && conditions)
-                OnMasterPowersGlossary();
+                GameManagerMain.GetInstance().CallEventMasterPowersGlossary();                                                          //dispara o evento
         }
 
         //---------------------------------------------------------------------------------------------------------------
@@ -43,11 +53,11 @@ namespace Managers
 
         public void OnMasterPowersGlossary()
         {
-            if(MasterPowersMenuCanvasUI != null)
+            if(GlossaryMenuCanvasUI != null)
             {
-                MasterPowersMenuCanvasUI.SetActive(!MasterPowersMenuCanvasUI.activeSelf);                   // Inverte o estado atual de ativação do Canvas.
+                GlossaryMenuCanvasUI.SetActive(!GlossaryMenuCanvasUI.activeSelf);                   // Inverte o estado atual de ativação do Canvas.
                 GameManagerMain.GetInstance().isMasterPowersGlossaryOn = !GameManagerMain.GetInstance().isMasterPowersGlossaryOn;   // Inverte o estado do flag do Gerenciador de Eventos.
-                GameManagerMain.GetInstance().CallEventMasterPowersGlossary();                                          // Dispara o evento GameMenu.
+                                                        
             }
             else
                 Debug.LogError("Nenhum Menu Atribuido ao GameManagerMasterPowersGlossary!");

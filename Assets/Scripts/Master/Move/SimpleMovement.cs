@@ -22,6 +22,7 @@ public class SimpleMovement : MonoBehaviour
 
     public bool canVerticalMove = false;
     public bool canHorizontalMove = false;
+    public bool canLeftRotate = false;
 
     public float lifeTime = 5f;
     public float moveSpeed = 2f;
@@ -29,6 +30,8 @@ public class SimpleMovement : MonoBehaviour
     public Color32 verticalDebugColor = Color.cyan;
     public Vector2[] horizontalRoute;
     public Color32 horizontalDebugColor = Color.red;
+    public Color32 leftRotateDebugColor = Color.green;
+    public float leftRotateAngle = 0;
 
     public bool _active = false;
 
@@ -174,7 +177,14 @@ public class SimpleMovement : MonoBehaviour
             Gizmos.DrawWireCube(center, size);            
         }
 
+        if(canLeftRotate)
+        {
+            Gizmos.color = leftRotateDebugColor;
 
+            Vector2 positionA = new Vector2(transform.position.x - (size.x / 2) - 0.3f, transform.position.y + size.y/4);
+            Vector2 positionB = new Vector2(transform.position.x + (size.x / 2) + 0.3f, transform.position.y + size.y/4);
+            Gizmos.DrawLine(positionA, positionB);
+        }
         //Gizmos.DrawCube(center, size);
         //Gizmos.DrawWireSphere(rote[0], 30.00f);
     }

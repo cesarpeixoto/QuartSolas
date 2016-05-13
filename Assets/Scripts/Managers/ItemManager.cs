@@ -23,6 +23,7 @@ public class ItemManager : MonoBehaviour
 
     private List<Transform> _itemSpawArea;                          // Lista de áreas onde os itens podem ser spawnados
     public Collectable[] resources;                                 // Array que armazena todos os itens que podem ser spawnados
+    public HUDRoundTime HUDRef = null;
 
     public float initialTimeInterval = 0;                           // Termo inicial para intervalos de tempo para novo spawn
     public float finalTimeInvervalEnd = 0;                          // Termo final para intervalos de tempo para novo spawn
@@ -39,6 +40,7 @@ public class ItemManager : MonoBehaviour
     {
         _itemSpawArea = transform.OfType<Transform>().ToList();     // Recebe a lista de todos os Game Objects Filhos
         _nextTimeToSpawn = SortTimeToSpawn();                       // Configura o tempo para o próximo spawn de item
+        resources[3].GetComponent<ActorHourglass>().hudTimer = HUDRef;
 	}
 	
 	// Update is called once per frame
@@ -79,6 +81,10 @@ public class ItemManager : MonoBehaviour
     private void SpawnRandomItem()
     {
         Instantiate (SortIten(), SortArea(), this.transform.rotation);
+        //Collectable check = temp.GetComponent<Collectable>();
+
+//        if (temp.GetComponent<Collectable>().itemId == ItemID.hourglass)
+//            temp.GetComponent<ActorHourglass>().hudTimer = HUDRef;
     }
 
     //---------------------------------------------------------------------------------------------------------------
