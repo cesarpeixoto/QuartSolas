@@ -33,6 +33,7 @@ namespace Managers
         public Text placar = null;
         public static bool actorWins = false;
         public float waitTime = 5.0f;
+        public bool isEnable = false;
 
 
         void OnEnable()
@@ -56,7 +57,13 @@ namespace Managers
         // Update is called once per frame
         void Update () 
         {
-
+            if(isEnable)
+            {
+                if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))              // teclas para pular a tela
+                {
+                    NextRound();
+                }
+            }
         }
 
 
@@ -67,6 +74,7 @@ namespace Managers
         {
             if(GlossaryMenuCanvasUI != null)
             {
+                isEnable = true;
                 GlossaryMenuCanvasUI.SetActive(!GlossaryMenuCanvasUI.activeSelf);                   // Inverte o estado atual de ativação do Canvas.
                 GameManagerMain.GetInstance().isMatchSummaryOn = !GameManagerMain.GetInstance().isMatchSummaryOn;   // Inverte o estado do flag do Gerenciador de Eventos.
                 HUDRoundTime.inGame = false;
@@ -96,6 +104,7 @@ namespace Managers
 
         private void NextRound()
         {
+            isEnable = false;
             GameStateManager.GetInstance().NextScene();
         }
 

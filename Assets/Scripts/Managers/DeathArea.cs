@@ -20,14 +20,16 @@ using UnityEngine.SceneManagement;
 
 public class DeathArea : MonoBehaviour
 {
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.CompareTag("Actor"))
-		{
-			ActorStateManager.isDead = true;
-		}
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Actor"))
+        {
+            other.gameObject.GetComponent<ActorStateManager>().die();
+            //ActorStateManager.isDead = true;
+        }
         else
             Destroy(other.gameObject);
-	}
+    }
 }
+
 

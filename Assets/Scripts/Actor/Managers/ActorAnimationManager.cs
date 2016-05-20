@@ -63,7 +63,7 @@ public class ActorAnimationManager : MonoBehaviour
 		else if (ActorStateManager.isDead)															
 		{
 			changeAnimationState (AnimationState.Dead);
-			die ();
+			//die ();
 		}
 			
 	}

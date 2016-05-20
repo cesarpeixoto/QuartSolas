@@ -19,8 +19,10 @@ GameObject:
   - 114: {fileID: 11456850}
   - 114: {fileID: 11400656}
   - 114: {fileID: 11494310}
-  - 114: {fileID: 11468556}
+  - 114: {fileID: 11487514}
   - 114: {fileID: 11496072}
+  - 114: {fileID: 11400720}
+  - 114: {fileID: 11479628}
   m_Layer: 9
   m_Name: Actor
   m_TagString: Actor
@@ -28,15 +30,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &176662
+--- !u!1 &151718
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 424216}
-  - 212: {fileID: 21240992}
+  - 4: {fileID: 405326}
+  - 212: {fileID: 21251714}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -44,12 +46,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &424216
+--- !u!4 &405326
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176662}
+  m_GameObject: {fileID: 151718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.024999976, y: 0.13000011, z: 0}
   m_LocalScale: {x: 1.0684366, y: 1.0684366, z: 0.42737466}
@@ -63,10 +65,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 2.72, z: 0}
+  m_LocalPosition: {x: -0.65, y: 1.64, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
-  - {fileID: 424216}
+  - {fileID: 405326}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5097558
@@ -80,7 +82,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 1.5
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -143,6 +145,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: 0000000001000000
+--- !u!114 &11400720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d509061e32d543a40bbc430394a18fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputControls: 
+  itemId: 0
+  lifeTime: 30
 --- !u!114 &11408026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,7 +221,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfbcb6393e9dec4eb2284551a5a4d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11468556
+--- !u!114 &11479628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8fd4e90372fe241bb4270192f4dfe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputControls: 
+  itemId: 3
+  lifeTime: 10
+  walkSpeed: 3.8
+  jumpForce: 7.3
+--- !u!114 &11487514
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -217,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: 04000000
-  jumpForce: 9.5
+  jumpForce: 5.5
   jumpDelay: 0.1
   jumpCount: 2
 --- !u!114 &11494310
@@ -232,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputControls: 0000000001000000
-  speed: 3.6
+  speed: 2.2
   frozzen: 0
 --- !u!114 &11496072
 MonoBehaviour:
@@ -247,17 +279,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputControls: 05000000
   itemId: 1
+  lifeTime: 30
   shootDelay: 0.5
   projectilePrefab: {fileID: 160768, guid: ed729541300ab70459c355ce1c6f2441, type: 2}
   shootPosition: {x: 0.09, y: 0}
   debugColor: {r: 0, g: 1, b: 1, a: 1}
   debugRadius: 0.033
---- !u!212 &21240992
+--- !u!212 &21251714
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176662}
+  m_GameObject: {fileID: 151718}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -308,7 +341,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: d19e936ef44f5984fa380f7a4131a894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4a367623e7ef6949978e86cb314edc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

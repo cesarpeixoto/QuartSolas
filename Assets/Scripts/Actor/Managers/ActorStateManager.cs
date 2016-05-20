@@ -100,7 +100,11 @@ public class ActorStateManager : MonoBehaviour
         }
 
 		if(!isShieled)
-			ActorStateManager.isDead = true;
+        {
+            ActorStateManager.isDead = true;
+            die();
+        }
+			
 		else
         {
             Vector3 position = new Vector3(transform.position.x, transform.position.y + 0.11f, -1.0f);          // recebe posição
@@ -130,10 +134,15 @@ public class ActorStateManager : MonoBehaviour
 		//GameObject actor = GameObject.FindGameObjectWithTag ("Actor");
 		Destroy (gameObject);
 		//SceneManager.LoadScene(0);
-		ActorStateManager.isDead = false;
+		//ActorStateManager.isDead = false;
         Managers.GameManagerMatchSummary.actorWins = false;
         Managers.GameManagerMain.GetInstance().CallEventMatchSummary();
 	}
+
+    private void OnDestroy()
+    {
+        isDead = false;                                                             // É estático, portanto reinicializamos
+    }
 
 	//---------------------------------------------------------------------------------------------------------------
 }
