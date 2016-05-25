@@ -19,7 +19,7 @@ public class ActorBootBehaviour : ItemActionAbstractBehaviour
     }
 	
     void OnEnable()
-    {
+    {  
         GetComponent<Walk>().speed = walkSpeed;
         GetComponent<DoubleJump>().jumpForce = jumpForce;
     }

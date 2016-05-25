@@ -75,15 +75,19 @@ public class InputManager : MonoBehaviour
 
 	public AxisState[] inputs;											// Array de Axis, similar ao InputManager do Unity
 	public InputState inputState;										// Classe do tipo InputState que armazena os estados dos comandos
+    public bool isActive = true;
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos herdados de MonoBehaviour e Jump
 
 	// Update is called once per frame
 	void Update () 
-	{
-		foreach (AxisState input in inputs)
-			inputState.setControlValue (input.control, input.state);	// Controla a interface com o InputManager do Unity
+	{        
+        foreach (AxisState input in inputs)
+        {
+            inputState.setControlValue (input.control, input.state);    // Controla a interface com o InputManager do Unity
+        }
+                        
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

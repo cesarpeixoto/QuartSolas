@@ -16,7 +16,11 @@ public class ItemActionAbstractBehaviour: ActionBehavior
         deltaTime += Time.deltaTime;
 
         if (deltaTime >= lifeTime)
+        {
             this.enabled = false;
+            deltaTime = 0;
+        }
+            
 	}
 
 
