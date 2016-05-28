@@ -111,6 +111,11 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ToTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void Restart()
     {
         masterPoints = 0;

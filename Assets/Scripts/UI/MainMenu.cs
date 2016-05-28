@@ -23,6 +23,13 @@ public class MainMenu : MonoBehaviour {
         Time.timeScale = 1;
     }
 
+    public void OnTutorial()
+    {
+        GameStateManager.GetInstance().Restart();
+        GameStateManager.GetInstance().ToTutorial();
+        Time.timeScale = 1;
+    }
+
     public void OnExit()
     {
         Application.Quit();

@@ -69,6 +69,7 @@ public class CollisionStateManager : MonoBehaviour
 		leftCollided = false;
 		rightCollided = false;
 
+
 		if (!isGrounded)
 		{
 			Vector2 pointA = Vector2.zero;									// Vetor de auxilio para detectar colisão
@@ -91,7 +92,8 @@ public class CollisionStateManager : MonoBehaviour
 
 			leftCollided = Physics2D.OverlapArea (pointA, pointB, collisionLayer);  			// Detecta colisão para lateral esquerda
 			Debug.DrawLine (pointA, pointB);													// Desenha esta linha para debug
-		}			
+		}
+              
 	}
 
 	//---------------------------------------------------------------------------------------------------------------

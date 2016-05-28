@@ -32,7 +32,7 @@ namespace Managers
         public Text whoWins = null;
         public Text placar = null;
         public static bool actorWins = false;
-        public float waitTime = 5.0f;
+        public float waitTime = 6.0f;
         public bool isEnable = false;
 
 
@@ -84,14 +84,14 @@ namespace Managers
                 {
                     GameStateManager.GetInstance().ActorPoints++;
                     whoWins.text = "Ator Ganhou!";
-                    placar.text = "Ator " + GameStateManager.GetInstance().ActorPoints + " X " + GameStateManager.GetInstance().MasterPoints + " Mestre";
+                    placar.text = GameStateManager.GetInstance().ActorPoints + "X" + GameStateManager.GetInstance().MasterPoints;
                     Invoke("NextRound", waitTime);
                 }
                 else
                 {
                     GameStateManager.GetInstance().MasterPoints++;
                     whoWins.text = "Mestre Ganhou!";
-                    placar.text = "Ator " + GameStateManager.GetInstance().ActorPoints + " X " + GameStateManager.GetInstance().MasterPoints + " Mestre";
+                    placar.text = GameStateManager.GetInstance().ActorPoints + "X" + GameStateManager.GetInstance().MasterPoints;
 
                     
                     Invoke ("NextRound", waitTime);

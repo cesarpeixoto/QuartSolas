@@ -23,6 +23,8 @@ public class SpawnerSpikes : SpawnerBehaviour
 	protected override void Start ()
 	{
         base.Start();
+        deltaTime = 0.0f;
+        _active = true;
 	}
         
 	protected override void Update ()

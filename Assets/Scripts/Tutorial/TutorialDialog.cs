@@ -13,6 +13,8 @@ public class TutorialDialog : MonoBehaviour
     public int relativeEndText =0;
 
     public KeyCode dialogInput = KeyCode.Return;                                    // Referência para a tecla do texto.
+    public bool isActor = true;
+    public int mouseButton = 0;
     private Text _dialog = null;                                                    // Referência para o texto.
 
     private bool _isTextStarted = false;                                            // Flag que indica se já está sendo exibido um texto.
@@ -32,13 +34,13 @@ public class TutorialDialog : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
+        
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if(Input.GetKeyDown(dialogInput))
+        if((Input.GetKeyDown(dialogInput) && isActor) || (Input.GetMouseButton(mouseButton) && !isActor))
         {
             if(!_isTextStarted && currentTextIndex <= relativeEndText)
             {
@@ -46,11 +48,17 @@ public class TutorialDialog : MonoBehaviour
                 _isTextStarted = true;
                 StartCoroutine(DisplayText(dialogTexts[currentTextIndex++]));           // usamos ++ depois, para ele incrementar depois que passar o valor ;-)
             }
-            if(!_isTextStarted && currentTextIndex > relativeEndText)
+            if((!_isTextStarted && currentTextIndex > relativeEndText) && isActor)
             {
                 StopBlinkMessage();
                 ActorTutorialManager.GetInstance().NextStep();
             }
+            else if((!_isTextStarted && currentTextIndex > relativeEndText) && !isActor)
+            {
+                StopBlinkMessage();
+                MasterTutorialManager.GetInstance().NextStep();
+            }
+
         }
 	}
 

@@ -108,9 +108,8 @@ public class SpawnerBomb : SpawnerBehaviour
             {
                 if (hit.distance < 2.5f)
                     result = false;
-
-                Debug.Log(hit.distance);
-                Debug.Log(result);
+                //Debug.Log(hit.distance);
+                //Debug.Log(result);
             }
         }
             

@@ -17,6 +17,7 @@ public class ActorTutorialManager : MonoBehaviour
     public TutorialDialog dialogManager = null;
     public GameObject tutorialWindow = null;
     public GameObject checkPoint = null;
+    public GameObject blinkText = null;
 
     public GameObject freezePlatform1 = null;
     public GameObject freezePlatform2 = null;
@@ -54,7 +55,6 @@ public class ActorTutorialManager : MonoBehaviour
 	void Start () 
     {
         Paralyze(false);
-        Debug.Log(actor.transform.position);
         checkPoint.SetActive(false);
         Invoke("FirstStep", 0.5f);
 	}
@@ -134,6 +134,10 @@ public class ActorTutorialManager : MonoBehaviour
         dialogManager.DisplayNextText(2);
     }
 
+    private void EighthStep()
+    {
+        StartBlinkMessage();
+    }
 
 
 
@@ -164,7 +168,9 @@ public class ActorTutorialManager : MonoBehaviour
             case 7:
                 SeventhStep();
                 break;
-                
+            case 8:
+                EighthStep();
+                break;                
                 // invocar a função do segundo passo
             default:
                 break;
@@ -178,6 +184,31 @@ public class ActorTutorialManager : MonoBehaviour
         inputManager.enabled = value;
         actor.GetComponent<Walk>().enabled = value;
     }
+
+    private void StartBlinkMessage()
+    {
+        blinkText.SetActive(true);
+        StartCoroutine("Blink");
+    }
+
+    private void StopBlinkMessage()
+    {
+        StopCoroutine("Blink");
+        blinkText.SetActive(false);
+    }
+
+
+    private IEnumerator Blink()
+    {
+        while(true)
+        {
+            blinkText.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            blinkText.SetActive(false);
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
 
 
 }

@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Woods.unity
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity

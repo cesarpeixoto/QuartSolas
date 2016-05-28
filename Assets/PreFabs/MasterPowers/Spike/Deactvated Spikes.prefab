@@ -75,7 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 1.3
   spkike: {fileID: 193242, guid: 0cd3aa52ab053f740a81f809f3d0dd19, type: 2}
-  tempLifeTime: 10
+  tempLifeTime: 15
 --- !u!212 &21261848
 SpriteRenderer:
   m_ObjectHideFlags: 1

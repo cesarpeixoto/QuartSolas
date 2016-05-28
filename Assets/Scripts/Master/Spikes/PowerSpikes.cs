@@ -39,6 +39,7 @@ public class PowerSpikes : MasterBehaviour
 		if (!hit) // Se não clicou em colisor, ele fará o spawn
 		{ 
             GameObject temp = (GameObject)Instantiate (spawnavel, position, Quaternion.identity);
+            //Instantiate (spawnavel, position, Quaternion.identity);
             //temp.GetComponent<SpawnerSpikes>().lifeTime = lifeTime;
             temp.GetComponent<ActiveSpikes>().tempLifeTime = lifeTime;
             MouseManager.masterPower = null;										// Desativa a habilidade no MouseManager
