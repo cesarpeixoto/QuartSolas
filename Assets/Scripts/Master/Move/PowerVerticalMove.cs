@@ -41,6 +41,12 @@ public class PowerVerticalMove : MasterBehaviour
         selecton = selected;                                                            // Se for Interactive, marca a seleção nele
         selecton.lifeTime = lifeTime;
         selecton.activeVerticalMove();  
+
+        SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>();
+        //Debug.Log(platforms.Length);
+        foreach (SimpleMovement selection in platforms)                 // Desceleciona todas as plataformas.
+            selection.Deselect();
+        
         MouseManager.masterPower = null;                                                // Desativa a habilidade no MouseManager
     }
 

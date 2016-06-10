@@ -40,7 +40,7 @@ public class TutorialDialog : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if((Input.GetKeyDown(dialogInput) && isActor) || (Input.GetMouseButton(mouseButton) && !isActor))
+        if((Input.GetKeyDown(dialogInput) && isActor) || (Input.GetMouseButtonDown(mouseButton) && !isActor))
         {
             if(!_isTextStarted && currentTextIndex <= relativeEndText)
             {
@@ -84,7 +84,7 @@ public class TutorialDialog : MonoBehaviour
 
             if(currentCharIndex < strLength)                                            // Testa se o indice atual é maior que o tamanho do texto.
             {
-                if(Input.GetKeyDown(dialogInput))
+                if((isActor && Input.GetKeyDown(dialogInput)) || (!isActor && Input.GetMouseButtonDown(mouseButton)))
                 {
                     currentCharIndex = strLength -1;
                     _dialog.text = textDisplay; 

@@ -19,6 +19,8 @@ public class ActorTutorialManager : MonoBehaviour
     public GameObject checkPoint = null;
     public GameObject blinkText = null;
 
+    public bool completed = false;
+
     public GameObject freezePlatform1 = null;
     public GameObject freezePlatform2 = null;
 
@@ -48,6 +50,11 @@ public class ActorTutorialManager : MonoBehaviour
             return;
         }
         _Instance = this;
+    }
+
+    void OnDestroy()
+    {
+        _Instance = null;
     }
 
 
@@ -136,6 +143,7 @@ public class ActorTutorialManager : MonoBehaviour
 
     private void EighthStep()
     {
+        completed = true;
         StartBlinkMessage();
     }
 

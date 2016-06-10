@@ -120,12 +120,40 @@ public class FlowerState : MonoBehaviour
 		MouseManager.masterPower = thisPower;
 		SetDeltaTime ();
 		powerManager.UpdateResource (pwrSelected); //////////////////////////////// AQUI ESTÁ A BAIXA DOS PODERES NOS RECURSOS  //////////////////////////////////////////////////
+        CheckSelectables();
 
 		// Configura a imagem e o label e o icone
 		//icon.enabled = false;
 		powerManager.image.sprite = powerManager.resources [(int)pwrSelected].imageInfo;
 		powerManager.count.text = Convert.ToString(powerManager.resources [(int)pwrSelected].quantity + powerManager.resources [(int)pwrSelected].distributed);
 	}
+
+
+    private void CheckSelectables()
+    {
+        if (thisPower.GetType() == typeof(PowerHorizontalMove))
+        {
+            SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>();//GetComponents<SimpleMovement>();
+            foreach (SimpleMovement selection in platforms)           // Seleciona todas as plataformas.
+                if (selection.canHorizontalMove)
+                    selection.Select();
+        }
+        else if (thisPower.GetType() == typeof(PowerVerticalMove))
+        {
+            SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>();//GetComponents<SimpleMovement>();
+            foreach (SimpleMovement selection in platforms)           // Seleciona todas as plataformas.
+                if (selection.canVerticalMove)
+                    selection.Select();            
+        }
+        else if (thisPower.GetType() == typeof(PowerFreeze))
+        {
+            SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>(); //GetComponents<SimpleMovement>();
+            foreach (SimpleMovement selection in platforms)                                      // Seleciona todas as plataformas.
+                selection.Select();            
+        }
+    }
+
+
         
 	//---------------------------------------------------------------------------------------------------------------
 	// Metodos que gera um delta time randômico

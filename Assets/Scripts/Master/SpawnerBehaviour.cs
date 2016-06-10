@@ -24,7 +24,7 @@ public abstract class SpawnerBehaviour : MonoBehaviour
 	public bool onInpact = false;
 	protected float deltaTime = 0.00f; 						// Tempo decorrido
 	private bool runing = false;
-    protected bool _active;
+    protected bool _active = true;
     //public LayerMask collisionMask;
     //public int RayCount = 4;
 

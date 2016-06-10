@@ -14,6 +14,7 @@ $Notice: (C) Copyright 2016 by Cesar Peixoto. All Rights Reserved. $     Finaliz
 =============================================================================================================== */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 [RequireComponent (typeof(CollisionStateManager), typeof(FaceDirection), typeof(Walk))]
@@ -29,9 +30,16 @@ public class DoubleJump : ActionBehavior
 
 	private float lastJumpTime = 0f;                                        // Cronômetro para calculo de tempo mínimo de segundo salto
 	private int   jumpsRemaning = 0;                                        // Saltos restantes
+    private AudioSource _audio = null;
 
 	//---------------------------------------------------------------------------------------------------------------
 	// Métodos herdados de MonoBehaviour
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _audio = GetComponent<AudioSource>();
+    }
 
 	// Update is called once per frame
 	private void Update () 
@@ -65,7 +73,7 @@ public class DoubleJump : ActionBehavior
 	private void OnJump()
 	{
 		lastJumpTime = Time.time;													// Cromometro do ultimo salto.
-
+        _audio.Play();
 		if (jumpsRemaning == jumpCount -1)
 		{
 			Vector2 velocity = _thisBody2D.velocity;								// Recebe a velocidade atual do corpo 

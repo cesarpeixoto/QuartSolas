@@ -34,9 +34,11 @@ public class SettingsManager : MonoBehaviour
     private float _musicVol = 0.0f;
     private float _sfxVol = 0.0f;
 
+    private AudioSource clickAudio = null;
 
     private void Awake()
     {
+        clickAudio = GetComponent<AudioSource>();
         _resolutions = Screen.resolutions;                                                       // Recebe resoluções suportadas.
         resolutionDropDown.options.Clear();
         resolutionDropDown.captionText.text = Screen.currentResolution.width + " x " + Screen.currentResolution.height;
@@ -61,10 +63,16 @@ public class SettingsManager : MonoBehaviour
         SetPainel(SettingsPainels.Main);
     }
 
-    public void GraphicsApply()
+    public void OnClick(string function)
     {
+        StartCoroutine(function);
+    }
+
+    public void GraphicsApply()
+    {        
         QualitySettings.vSyncCount = (vSync.isOn) ? 2 : 0;             
         Screen.SetResolution(_resolutions[resolutionDropDown.value].width, _resolutions[resolutionDropDown.value].height, fullscreen.isOn);
+        clickAudio.Play();
         SetPainel(SettingsPainels.Main);
 
         // Serializar em arquivo??
@@ -72,14 +80,33 @@ public class SettingsManager : MonoBehaviour
 
     // retorna o audio ao volume antes de alterações
     public void AudioCancel()
-    {
+    {        
         masterMixer.SetFloat("masterVol", _masterVol);
         masterMixer.SetFloat("musicVol", _musicVol);
         masterMixer.SetFloat("sfxVol", _sfxVol);
         Geral.value = _masterVol;
         music.value = _musicVol;
         sfx.value = _sfxVol;
+        clickAudio.Play();
         SetPainel(SettingsPainels.Main);
+    }
+
+    public void SetMainPainel()
+    {
+        clickAudio.Play();
+        SetPainel(SettingsPainels.Main);
+    }
+
+    public void SetGraphicsPainel()
+    {
+        clickAudio.Play();
+        SetPainel(SettingsPainels.Grapchics);
+    }
+
+    public void SetAudioPainel()
+    {
+        clickAudio.Play();
+        SetPainel(SettingsPainels.Audio);
     }
 
     public void SetMasterVol(float masterVol)
@@ -96,24 +123,6 @@ public class SettingsManager : MonoBehaviour
     {
         masterMixer.SetFloat("sfxVol", sfxVol);
     }
-           
-    public void SetMainPainel()
-    {
-        SetPainel(SettingsPainels.Main);
-    }
-
-    public void SetGraphicsPainel()
-    {
-        SetPainel(SettingsPainels.Grapchics);
-    }
-
-    public void SetAudioPainel()
-    {
-        SetPainel(SettingsPainels.Audio);
-    }
-
-
-
 
 
     private void SetPainel(SettingsPainels painel)

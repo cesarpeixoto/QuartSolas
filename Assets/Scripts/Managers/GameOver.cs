@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour 
 {
+    public Image Painel = null;
+    public Sprite actorWins = null;
+    public Sprite masterWins = null;
+
     public Text winner = null;
 	// Use this for initialization
 	void Start () 
     {
-        if(GameStateManager.GetInstance().ActorPoints > GameStateManager.GetInstance().MasterPoints)
-            winner.text = "Ator foi o grande campeão!";
+        if (GameStateManager.GetInstance().ActorPoints > GameStateManager.GetInstance().MasterPoints)
+            Painel.sprite = actorWins;
         else
-            winner.text = "Mestre foi o grande campeão!";
+            Painel.sprite = masterWins;
 
         Invoke ("ReStart", 5.0f);
 

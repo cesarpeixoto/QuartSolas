@@ -29,6 +29,9 @@ public class PowerHorizontalMove : MasterBehaviour
 
     public override void Behaviour ()
     {
+        // aqui tem o clique!
+
+
         Vector2 position = Camera.main.ScreenToWorldPoint (Input.mousePosition);        // Recebe a posição do clique do mouse, convertido para coordenada na fase
         RaycastHit2D hit = Physics2D.Raycast (position, Vector2.zero);
         if (hit.collider == null)                                                       // Se não atingiu um colisor, sai da função
@@ -42,6 +45,12 @@ public class PowerHorizontalMove : MasterBehaviour
         selecton = selected;                                                            // Se for Interactive, marca a seleção nele
         selecton.lifeTime = lifeTime;
         selecton.activeHorizontalMove();  
+
+        SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>();
+        Debug.Log(platforms.Length);
+        foreach (SimpleMovement selection in platforms)                 // Desceleciona todas as plataformas.
+            selection.Deselect();
+
         MouseManager.masterPower = null;                                                // Desativa a habilidade no MouseManager
     }
 

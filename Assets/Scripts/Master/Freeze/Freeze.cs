@@ -58,6 +58,9 @@ public class Freeze : MonoBehaviour
             return;
         }
         _thisCollider.sharedMaterial = material;
+        SimpleMovement[] platforms = GameObject.Find("Platforms").GetComponentsInChildren<SimpleMovement>();
+        foreach (SimpleMovement selection in platforms)                 // Desceleciona todas as plataformas.
+            selection.Deselect();
         _active = true;
         effects.SetActive(true);
     }

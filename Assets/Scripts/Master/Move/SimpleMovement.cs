@@ -35,6 +35,7 @@ public class SimpleMovement : MonoBehaviour
 
     public bool _active = false;
 
+    public GameObject selectable = null;
     private Vector2[] route = new Vector2[2];
     private Vector2 startPosition;
     private int indexPosition = 0;
@@ -187,6 +188,18 @@ public class SimpleMovement : MonoBehaviour
         }
         //Gizmos.DrawCube(center, size);
         //Gizmos.DrawWireSphere(rote[0], 30.00f);
+    }
+
+    public void Select()
+    {
+        if(selectable != null)
+            selectable.SetActive(true);
+    }
+
+    public void Deselect()
+    {
+        if(selectable != null)
+            selectable.SetActive(false);
     }
         
 }

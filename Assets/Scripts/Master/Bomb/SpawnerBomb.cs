@@ -39,7 +39,8 @@ public class SpawnerBomb : SpawnerBehaviour
     {
         base.Start();
         _thisCollider = GetComponent<CircleCollider2D>();
-        _active = CheckDistance(_thisCollider);
+        if(onInpact)
+            _active = CheckDistance(_thisCollider);
         //if (!_active)
            // onInpact = false;
     }

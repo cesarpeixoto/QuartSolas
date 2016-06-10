@@ -13,6 +13,7 @@ $Notice: (C) Copyright 2016 by Cesar Peixoto. All Rights Reserved. $     Finaliz
 =============================================================================================================== */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,8 @@ public class ActorStateManager : MonoBehaviour
 
 	// Morte do Ator.
 	public static bool isDead = false;  
+
+    public AudioSource gameMusic = null;
 
 	private Rigidbody2D _thisBody2D = null;							// Referencia para RigidBody2D
 	private InputState _thisInputState = null;						// Referencia para InputState
@@ -132,6 +135,7 @@ public class ActorStateManager : MonoBehaviour
 	private void restart()
 	{
 		//GameObject actor = GameObject.FindGameObjectWithTag ("Actor");
+        gameMusic.Stop();
 		Destroy (gameObject);
 		//SceneManager.LoadScene(0);
 		//ActorStateManager.isDead = false;
